@@ -5,9 +5,14 @@ import { ExclamationIcon } from '@heroicons/react/outline';
 const Grid = ({ homes = [] }) => {
   const isEmpty = homes.length === 0;
 
+
   const toggleFavorite = async id => {
     // TODO: Add/remove home from the authenticated user's favorites
   };
+
+  const homesList = homes.map(home => (
+    <Card key={home.id} {...home} onClickFavorite={toggleFavorite} />
+  ))
 
   return isEmpty ? (
     <p className="text-amber-700 bg-amber-100 px-4 rounded-md py-2 max-w-max inline-flex items-center space-x-1">
@@ -16,9 +21,7 @@ const Grid = ({ homes = [] }) => {
     </p>
   ) : (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      {homes.map(home => (
-        <Card key={home.id} {...home} onClickFavorite={toggleFavorite} />
-      ))}
+      {homesList}
     </div>
   );
 };

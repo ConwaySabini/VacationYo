@@ -39,9 +39,8 @@ const Card = ({
           className="absolute top-2 right-2"
         >
           <HeartIcon
-            className={`w-7 h-7 drop-shadow-lg transition ${
-              favorite ? 'text-red-500' : 'text-white'
-            }`}
+            className={`w-7 h-7 drop-shadow-lg transition ${favorite ? 'text-red-500' : 'text-white'
+              }`}
           />
         </button>
       </div>
